@@ -140,7 +140,11 @@ class _EvaluateTabState extends State<EvaluateTab> {
     );
 
     if (selectedCard != null) {
-      setState(() => setter(selectedCard));
+      if (selectedCard == 'CLEAR') {
+        setState(() => setter(null));
+      } else {
+        setState(() => setter(selectedCard));
+      }
     }
   }
 
@@ -437,7 +441,11 @@ class _CompareTabState extends State<CompareTab> {
     );
 
     if (selectedCard != null) {
-      setState(() => setter(selectedCard));
+      if (selectedCard == 'CLEAR') {
+        setState(() => setter(null));
+      } else {
+        setState(() => setter(selectedCard));
+      }
     }
   }
 
@@ -873,7 +881,11 @@ class _MonteCarloTabState extends State<MonteCarloTab> {
     );
 
     if (selectedCard != null) {
-      setState(() => setter(selectedCard));
+      if (selectedCard == 'CLEAR') {
+        setState(() => setter(null));
+      } else {
+        setState(() => setter(selectedCard));
+      }
     }
   }
 

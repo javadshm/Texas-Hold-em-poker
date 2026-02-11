@@ -53,6 +53,17 @@ class CardSelectorDialog extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 16),
+            // Clear button
+            OutlinedButton.icon(
+              onPressed: () => Navigator.of(context).pop('CLEAR'),
+              icon: const Icon(Icons.clear),
+              label: const Text('Clear Selection'),
+              style: OutlinedButton.styleFrom(
+                foregroundColor: Colors.white70,
+                side: const BorderSide(color: Colors.white38),
+              ),
+            ),
+            const SizedBox(height: 16),
             Expanded(
               child: SingleChildScrollView(
                 child: Column(
