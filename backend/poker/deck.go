@@ -2,7 +2,6 @@ package poker
 
 import (
 	"math/rand"
-	"time"
 )
 
 // Deck represents a deck of 52 cards
@@ -25,10 +24,9 @@ func NewDeck() *Deck {
 	return deck
 }
 
-// Shuffle shuffles the deck
+// Shuffle shuffles the deck using the global random source
 func (d *Deck) Shuffle() {
-	r := rand.New(rand.NewSource(time.Now().UnixNano()))
-	r.Shuffle(len(d.Cards), func(i, j int) {
+	rand.Shuffle(len(d.Cards), func(i, j int) {
 		d.Cards[i], d.Cards[j] = d.Cards[j], d.Cards[i]
 	})
 }

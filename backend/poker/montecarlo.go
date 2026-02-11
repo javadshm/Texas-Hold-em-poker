@@ -1,10 +1,5 @@
 package poker
 
-import (
-	"math/rand"
-	"time"
-)
-
 // MonteCarloResult represents the result of a Monte Carlo simulation
 type MonteCarloResult struct {
 	WinProbability  float64
@@ -23,8 +18,6 @@ func MonteCarlo(playerCards []Card, communityCards []Card, numPlayers, numSimula
 	ties := 0
 	losses := 0
 
-	r := rand.New(rand.NewSource(time.Now().UnixNano()))
-
 	for sim := 0; sim < numSimulations; sim++ {
 		// Create a new deck and remove known cards
 		deck := NewDeck()
@@ -32,10 +25,8 @@ func MonteCarlo(playerCards []Card, communityCards []Card, numPlayers, numSimula
 		allKnownCards = append(allKnownCards, communityCards...)
 		deck.Remove(allKnownCards)
 
-		// Shuffle the remaining deck
-		r.Shuffle(len(deck.Cards), func(i, j int) {
-			deck.Cards[i], deck.Cards[j] = deck.Cards[j], deck.Cards[i]
-		})
+		// Shuffle the remaining deck using global random
+		deck.Shuffle()
 
 		// Complete community cards if needed
 		simCommunityCards := make([]Card, len(communityCards))

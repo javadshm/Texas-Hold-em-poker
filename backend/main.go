@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"os"
 
 	"github.com/javadshm/Texas-Hold-em-poker/backend/api"
 )
@@ -11,8 +12,13 @@ import (
 // corsMiddleware adds CORS headers to all responses
 func corsMiddleware(next http.HandlerFunc) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
-		// Allow all origins for development
-		w.Header().Set("Access-Control-Allow-Origin", "*")
+		// Get allowed origins from environment variable or use default for development
+		allowedOrigin := os.Getenv("ALLOWED_ORIGIN")
+		if allowedOrigin == "" {
+			allowedOrigin = "*" // Default to wildcard for development only
+		}
+		
+		w.Header().Set("Access-Control-Allow-Origin", allowedOrigin)
 		w.Header().Set("Access-Control-Allow-Methods", "POST, GET, OPTIONS")
 		w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
 
