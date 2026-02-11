@@ -4,12 +4,12 @@ import 'package:http/http.dart' as http;
 class PokerApi {
   final String baseUrl;
 
-  PokerApi({this.baseUrl = 'http://localhost:8080'});
+  PokerApi({this.baseUrl = 'https://poker-backend-q18i.onrender.com'});
 
   Future<EvaluateResponse> evaluate(
       List<String> playerCards, List<String> communityCards) async {
     final response = await http.post(
-      Uri.parse('$baseUrl/api/evaluate'),
+      Uri.parse('$baseUrl/api/evaluate'),
       headers: {'Content-Type': 'application/json'},
       body: jsonEncode({
         'playerCards': playerCards,
