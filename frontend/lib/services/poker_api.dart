@@ -9,7 +9,7 @@ class PokerApi {
   Future<EvaluateResponse> evaluate(
       List<String> playerCards, List<String> communityCards) async {
     final response = await http.post(
-      Uri.parse('$baseUrl/api/evaluate'),
+      Uri.parse('$baseUrl/api/evaluate'),
       headers: {'Content-Type': 'application/json'},
       body: jsonEncode({
         'playerCards': playerCards,
