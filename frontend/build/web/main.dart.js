@@ -74193,7 +74193,7 @@ A.a37.prototype={
 wt(a,b){return this.ac9(a,b)},
 ac9(a,b){var s=0,r=A.Q(t.FG),q,p,o,n,m
 var $async$wt=A.R(function(c,d){if(c===1)return A.N(d,r)
-while(true)switch(s){case 0:p=A.eC("http://localhost:8080/api/evaluate")
+while(true)switch(s){case 0:p=A.eC("https://poker-backend-q18i.onrender.com/api/evaluate")
 o=t.N
 n=A.an(["Content-Type","application/json"],o,o)
 s=3
@@ -74210,7 +74210,7 @@ return A.P($async$wt,r)},
 vX(a,b,c){return this.aan(a,b,c)},
 aan(a,b,c){var s=0,r=A.Q(t.Mz),q,p,o,n,m,l
 var $async$vX=A.R(function(d,e){if(d===1)return A.N(e,r)
-while(true)switch(s){case 0:o=A.eC("http://localhost:8080/api/compare")
+while(true)switch(s){case 0:o=A.eC("https://poker-backend-q18i.onrender.com/api/compare")
 n=t.N
 m=A.an(["Content-Type","application/json"],n,n)
 s=3
@@ -74230,7 +74230,7 @@ return A.P($async$vX,r)},
 xh(a,b,c,d){return this.aeW(a,b,c,d)},
 aeW(a,b,c,d){var s=0,r=A.Q(t.lV),q,p,o,n,m
 var $async$xh=A.R(function(e,f){if(e===1)return A.N(f,r)
-while(true)switch(s){case 0:p=A.eC("http://localhost:8080/api/montecarlo")
+while(true)switch(s){case 0:p=A.eC("https://poker-backend-q18i.onrender.com/api/montecarlo")
 o=t.N
 n=A.an(["Content-Type","application/json"],o,o)
 s=3
