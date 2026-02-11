@@ -179,6 +179,14 @@ go run main.go
 
 The server will start on `http://localhost:8080`
 
+**Environment Variables:**
+- `ALLOWED_ORIGIN`: CORS allowed origin (default: `*` for development). For production, set to your frontend URL (e.g., `https://yourapp.com`)
+
+**Production Example:**
+```bash
+ALLOWED_ORIGIN=https://yourapp.com go run main.go
+```
+
 ### Running the Frontend (Flutter Web)
 
 ```bash
